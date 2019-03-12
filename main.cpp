@@ -46,7 +46,7 @@ unsigned int factorial(int n) {
 
 float combination(int n, int k) {
 
-    assert(n > k);
+    assert(n >= k);
 
     return factorial(n) / (factorial(n - k) * factorial(k));
 }
