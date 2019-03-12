@@ -19,6 +19,7 @@
 #include <math.h>
 #include "vec.h"
 #include <iostream>
+#include <cassert>
 
 using namespace std;
 const int WINDOW_WIDTH = 800;
@@ -26,6 +27,21 @@ const int WINDOW_HEIGHT = 800;
 
 std::vector< vec<int, 2> > ctrl_pts;
 
+
+float factorial(int n) {
+
+    assert(n >= 0);
+
+    if (n <= 1)
+        return 1.0;
+
+    float result = 1.0;
+
+    for (int i = 1; i <= n; i++)
+        result *= i;
+
+    return result;
+}
 
 void GL_render()
 {
