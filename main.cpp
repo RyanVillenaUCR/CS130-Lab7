@@ -48,7 +48,7 @@ float combination(int n, int k) {
 
     assert(n > k);
 
-    return factorial(n) / factorial(n - k);
+    return factorial(n) / (factorial(n - k) * factorial(k));
 }
 
 float binomial(int n, int k, float t) {
