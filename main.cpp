@@ -1,6 +1,8 @@
-// Name:
-// Quarter, Year:
-// Lab:
+// Name:            Ryan Villena
+// Quarter, Year:   Winter 2019
+// Lab:             7
+// Assignment pulled from here:
+// https://www.cs.ucr.edu/~shinar/courses/cs130/content/lab-07-bezier-files.zip
 //
 // This file is to be modified by the student.
 // main.cpp
@@ -64,7 +66,7 @@ void GLInit(int* argc, char** argv)
 
     //glMatrixMode(GL_PROJECTION_MATRIX);
     //glOrtho(0, WINDOW_WIDTH, 0, WINDOW_HEIGHT, -1, 1);
-    glutCreateWindow("CS 130 - <Insert Name Here>");
+    glutCreateWindow("CS 130 - RyanVillenaUCR");
     glutDisplayFunc(GL_render);
     glutMouseFunc(GL_mouse);
 }
