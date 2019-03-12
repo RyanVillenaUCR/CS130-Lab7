@@ -50,6 +50,16 @@ float combination(int n, int k) {
     return factorial(n) / factorial(n - k);
 }
 
+float binomial(int n, int k, float t) {
+
+    float result = 0;
+
+    for (int i = 0; i <= k; i++)
+        result += combination(n - 1, i) * pow(t, i) * pow(1 - t, n - 1 - i);
+
+    return result;
+}
+
 void GL_render()
 {
     glClear(GL_COLOR_BUFFER_BIT);
