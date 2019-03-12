@@ -28,16 +28,16 @@ const int WINDOW_HEIGHT = 800;
 std::vector< vec<int, 2> > ctrl_pts;
 
 
-float factorial(int n) {
+unsigned int factorial(int n) {
 
     assert(n >= 0);
 
     if (n <= 1)
-        return 1.0;
+        return 1;
 
-    float result = 1.0;
+    unsigned int result = 1;
 
-    for (int i = 1; i <= n; i++)
+    for (unsigned int i = 1; i <= static_cast<unsigned int>(n); i++)
         result *= i;
 
     return result;
