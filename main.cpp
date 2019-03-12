@@ -3,6 +3,7 @@
 // Lab:             7
 // Assignment pulled from here:
 // https://www.cs.ucr.edu/~shinar/courses/cs130/content/lab-07-bezier-files.zip
+// https://www.cs.ucr.edu/~shinar/courses/cs130/content/Lab7-Bezier-Curve.pdf
 //
 // This file is to be modified by the student.
 // main.cpp
