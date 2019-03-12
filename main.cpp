@@ -70,30 +70,44 @@ void GL_render()
     glClear(GL_COLOR_BUFFER_BIT);
     glutSwapBuffers();
 
-    glBegin(GL_LINES);
+
+    glBegin(GL_LINE_STRIP);
     glColor3f(1.0f,0.0f,0.0f);
+
+
+    if (ctrl_pts.size() >= 2) {
+
+        for (float i = 0.01; i <= 1.0; i += 0.01) {
+
+            vec2 graphMe;
+
+            for (size_t j = 0; j < ctrl_pts.size(); j++) {
+
+                graphMe += binomial(ctrl_pts.size(), j, i) * ctrl_pts[j];
+            }
+
+            glVertex2f(graphMe[0], graphMe[1]);
+
+        }
+    }
+
+    // glBegin(GL_LINES);
     // just for example, remove if desired
-    glVertex2f(-.5f,-.5f);
-    glVertex2f(.5f,-.5f);
-    glVertex2f(.5f,.5f);
-    glVertex2f(-.5f,.5f);
-    glEnd();
-    glFlush();
 
-    // glBegin(GL_LINE_STRIP);
-
-    // if (ctrl_pts.size() >= 2) {
-
-    //     for (float i = 0.0; i <= 1.0; i += 0.01) {
-
-    //         // vec<int, 2> graphMe = binomial(ctrl_pts.size() - 1, i, )
-    //     }
-
-
-    // }
-
+    // glColor3f(1.0f,0.0f,0.0f);
+    // glVertex2f(-.5f,-.5f);
+    // glVertex2f(.5f,-.5f);
+    // glVertex2f(.5f,.5f);
+    // glVertex2f(-.5f,.5f);
     // glEnd();
     // glFlush();
+
+
+
+
+
+    glEnd();
+    glFlush();
 }
 
 void GL_mouse(int button,int state,int x,int y)
