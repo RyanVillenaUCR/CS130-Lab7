@@ -28,6 +28,7 @@ const int WINDOW_HEIGHT = 800;
 std::vector<vec2> ctrl_pts;
 
 
+
 unsigned int factorial(int n) {
 
     assert(n >= 0);
@@ -50,21 +51,18 @@ float combination(int n, int k) {
     return factorial(n) / factorial(n - k);
 }
 
-vec<int, 2> binomial(int n, int k, float t) {
+float binomial(int n, int k, float t) {
 
-    assert(k < ctrl_pts.size());
+    // float result = 0;
 
-    vec<int, 2> result;
+    // for (int i = 0; i <= k; i++)
+    //     result += combination(n - 1, i) * pow(t, i) * pow(1 - t, n - 1 - i);
 
-    for (int i = 0; i <= k; i++)
-        result += combination(n - 1, i) * pow(t, i) * pow(1 - t, n - 1 - i) * ctrl_pts[i];
+    // return result;
 
-    return result;
+    return combination(n - 1, k) * pow(t, k) * pow(1 - t, n - 1 - k);
 }
 
-// float binomial(int n, int k, float t) {
-
-//     float result = 0;
 
 //     for (int i = 0; i <= k; i++)
 //         result += combination(n - 1, i) * pow(t, i) * pow(1 - t, n - 1 - i);
