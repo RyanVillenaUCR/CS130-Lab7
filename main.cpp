@@ -57,6 +57,9 @@ void GL_mouse(int button,int state,int x,int y)
         double px,py,dummy_z; // we don't care about the z-value but need something to pass in
         gluUnProject(x,y,0,mv_mat,proj_mat,vp_mat,&px,&py,&dummy_z);
         glutPostRedisplay();
+
+        vec<int, 2> points = { x, y };
+        ctrl_pts.push_back(points);
     }
 }
 
