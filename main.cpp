@@ -64,11 +64,6 @@ float binomial(int n, int k, float t) {
 }
 
 
-//     for (int i = 0; i <= k; i++)
-//         result += combination(n - 1, i) * pow(t, i) * pow(1 - t, n - 1 - i);
-
-//     return result;
-// }
 
 void GL_render()
 {
