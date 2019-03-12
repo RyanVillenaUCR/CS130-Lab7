@@ -50,15 +50,27 @@ float combination(int n, int k) {
     return factorial(n) / factorial(n - k);
 }
 
-float binomial(int n, int k, float t) {
+vec<int, 2> binomial(int n, int k, float t) {
 
-    float result = 0;
+    assert(k < ctrl_pts.size());
+
+    vec<int, 2> result;
 
     for (int i = 0; i <= k; i++)
-        result += combination(n - 1, i) * pow(t, i) * pow(1 - t, n - 1 - i);
+        result += combination(n - 1, i) * pow(t, i) * pow(1 - t, n - 1 - i) * ctrl_pts[i];
 
     return result;
 }
+
+// float binomial(int n, int k, float t) {
+
+//     float result = 0;
+
+//     for (int i = 0; i <= k; i++)
+//         result += combination(n - 1, i) * pow(t, i) * pow(1 - t, n - 1 - i);
+
+//     return result;
+// }
 
 void GL_render()
 {
@@ -74,6 +86,21 @@ void GL_render()
     glVertex2f(-.5f,.5f);
     glEnd();
     glFlush();
+
+    // glBegin(GL_LINE_STRIP);
+
+    // if (ctrl_pts.size() >= 2) {
+
+    //     for (float i = 0.0; i <= 1.0; i += 0.01) {
+
+    //         // vec<int, 2> graphMe = binomial(ctrl_pts.size() - 1, i, )
+    //     }
+
+
+    // }
+
+    // glEnd();
+    // glFlush();
 }
 
 void GL_mouse(int button,int state,int x,int y)
