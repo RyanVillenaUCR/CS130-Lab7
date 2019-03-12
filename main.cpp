@@ -125,8 +125,11 @@ void GL_mouse(int button,int state,int x,int y)
         gluUnProject(x,y,0,mv_mat,proj_mat,vp_mat,&px,&py,&dummy_z);
         glutPostRedisplay();
 
-        vec<int, 2> points = { x, y };
-        ctrl_pts.push_back(points);
+        // vec<int, 2> point = { x, y };
+        // vec2 point = { (float) x, (float) y };
+
+        vec2 point = { (float) px, (float) py };
+        ctrl_pts.push_back(point);
     }
 }
 
