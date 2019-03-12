@@ -43,6 +43,13 @@ float factorial(int n) {
     return result;
 }
 
+float combination(int n, int k) {
+
+    assert(n > k);
+
+    return factorial(n) / factorial(n - k);
+}
+
 void GL_render()
 {
     glClear(GL_COLOR_BUFFER_BIT);
