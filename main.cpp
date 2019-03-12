@@ -25,7 +25,7 @@ using namespace std;
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 800;
 
-std::vector< vec<int, 2> > ctrl_pts;
+std::vector<vec2> ctrl_pts;
 
 
 unsigned int factorial(int n) {
